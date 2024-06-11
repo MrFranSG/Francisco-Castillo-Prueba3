@@ -1,0 +1,102 @@
+body{
+    background-color: lightskyblue;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: aliceblue;
+}
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color: bisque;
+}
+
+#Mis{
+    text-align: center;
+}
+#p.Mision{
+    text-align: justify;
+    
+}
+
+#Vis{
+    text-align: center;
+}
+
+#Vision{
+    text-align: center;
+}
+
+#qs{
+    text-align: center;
+}
+
+#imagen1{
+    width: 500px;
+    display: block;
+    margin-left : auto;
+    margin-right: auto;
+    
+}
+
+#imagen2{
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vid{
+    text-align: center;
+}
+
+#Video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Formulario{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#Redes{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#Twitter{
+    display: block;
+    text-align: left;
+   
+}
+
+#Sfacebook{
+    display: block;
+    text-align: center;
+}
+
+#Vfacebook{
+    display: block;
+    text-align: right;
+}
