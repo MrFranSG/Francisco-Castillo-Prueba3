@@ -7,6 +7,9 @@ window.addEventListener("load", ()=>{
 
 })
 
+
+//Se crea contraste de registrar
+
 const registrar = ()=>{
     let fNombre = document.getElementById("Nombre");
     let fApellido = document.getElementById("Apellido");
@@ -43,10 +46,11 @@ const registrar = ()=>{
 
 
 const cargarDatos = ()=>{
+    //Trae de la promesa lo que se ha registrado
     ObtenerU().then((Usuarios)=> {
         console.log("c:");
         console.log(Usuarios)
-
+        //Se carga en el html
         let estructura = ""
         Usuarios.forEach((u)=>{
             estructura += "<tr>"
@@ -127,6 +131,8 @@ const actualizar = ()=>{
 
 
     document.getElementById("btnActualizar").disabled = "true";
+
+    //Se envia el objeto mas la id a las promesas
 
     ActualizarU(objeto,id).then(()=>{
         alert("Se actualiza con exito")

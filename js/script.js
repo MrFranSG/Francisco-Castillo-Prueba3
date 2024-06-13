@@ -5,6 +5,8 @@ function CambiarContraste() {
     let eH1 = document.getElementsByClassName("h1_cambiar");
     let nav1 = document.getElementsByClassName("nav1");
 
+
+    //Hace que el si el fondo es lightskyblue (el color de fondo) pase a ser negro y cambia las letras a lightskyblue
     if (fondoActual == "lightskyblue") {
         body.style.backgroundColor = "#ffffff"; 
         body.style.color = "#000000";
