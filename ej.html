@@ -77,11 +77,18 @@ src="https://www.youtube.com/watch?v=EFrL6-OhN94">
     <label for="CContraseña">Confirmar Contraseña</label><br>
     <input type="password" placeholder="CContraseña" id="CContraseña"><br><br>
     <label for="Genero">Genero</label><br>
-    <input type="checkbox" id="Genero" placeholder="Genero"><br><br>
+    <div>
+        <input type="radio" id="Hombre" name="Genero" value="Hombre" />
+        <label for="Hombre">Hombre</label>
+  
+        <input type="radio" id="Mujer" name="Genero" value="Mujer" />
+        <label for="Mujer">Mujer</label>
+  
+      </div>
     <label for="Comentario">Comentario</label><br>
     <input type="textarea" id="Comentario" placeholder="Comentario"><br><br>
     <label for="Noticias">Noticias</label><br>
-    <input type="radio" id="Noticias" placeholder="Noticias"><br><br>
+    <input type="checkbox" id="Noticias" placeholder="Noticias"/>¿Aceptas recibir noticias?<br><br>
     <button id="btnRegistrar">Registrar</button>
 </form>
 
@@ -96,7 +103,7 @@ src="https://www.youtube.com/watch?v=EFrL6-OhN94">
             <th>Contraseña</th>
             <th>CContraseña</th>
             <th>Genero</th>
-            <th>Comerntario</th>
+            <th>Comentario</th>
             <th>Noticias</th>
         </tr>
     </thead>
@@ -104,6 +111,29 @@ src="https://www.youtube.com/watch?v=EFrL6-OhN94">
         
     </tbody>
 </table>
+<h1>Actualizar</h1>
+    <label for="Nombre">Nombre</label><br>
+    <input type = "text" id="UPDnombre" placeholder="Nombre"><br><br>
+    <label for="Apellido">Apellido</label><br>
+    <input type = "text" id="UPDapellido" placeholder="Apellido"><br><br>
+    <label for="Anio">Año de nacimiento</label><br>
+    <input type = "date" id="UPDanio" placeholder="Anio"><br><br>
+    <label for="Conocer">Como nos conocio</label><br>
+    <input type = "text" id="UPDconocer" placeholder="Conocer"><br><br>
+    <label for="Correo">Correo</label><br>
+    <input type = "email" id="UPDcorreo" placeholder="Correo"><br><br>
+    <label for="Contraseña">Contraseña</label><br>
+    <input type = "password" id="UPDcontraseña" placeholder="Contraseña"><br><br>
+    <label for="CContraseña">Confirmar Contraseña</label><br>
+    <input type = "password" id="UPDccontraseña" placeholder="Confirmar Contraseña"><br><br>
+    <label for="Genero">Genero</label><br>
+    <input type = "text" id="UPDgenero" placeholder="Genero"><br><br>
+    <label for="Comentario">Comentario</label><br>
+    <input type = "textarea" id="UPDcomentario" placeholder="Comentario"><br><br>
+    <label for="Noticias">Noticias</label><br>
+    <input type = "checkbox" id="UPDnoticias" placeholder="Noticias" /> ¿Aceptas recibir noticias?<br><br>
+    <button id = "btnActualizar">Actualizar</button>
+
 
 <footer id="Redes">
     <h1>Redes sociales</h1>

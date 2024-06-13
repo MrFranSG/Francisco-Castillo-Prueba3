@@ -1,3 +1,5 @@
+//Credenciales entregadas por firebase
+
 export const firebaseConfig = {
     apiKey: "AIzaSyCLMz9Ur3_99jk-uCl0wcci43heCPZVrTU",
     authDomain: "evaluacion3-89ec3.firebaseapp.com",

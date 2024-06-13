@@ -1,9 +1,9 @@
-import {RegistrarU, ObtenerU } from "./promesa.js";
+import {RegistrarU, ObtenerU, ActualizarU, EliminarU } from "./promesa.js";
 window.addEventListener("load", ()=>{
     document.getElementById("btnRegistrar").addEventListener("click",registrar);
     
     cargarDatos();
-    
+    document.getElementById("btnActualizar").addEventListener("click",actualizar)
 
 })
 
@@ -25,7 +25,7 @@ const registrar = ()=>{
     let vCorreo = fCorreo.value;
     let vContraseña = fContraseña.value;
     let vCContraseña = fCContraseña.value;
-    let vGenero = fGenero.value;
+    let vGenero = document.querySelector("input[name='Genero']").value;
     let vComentario = fComentario.value;
     let vNoticias = fNoticias.checked;
     
@@ -65,23 +65,27 @@ const cargarDatos = ()=>{
             estructura += "</tr>";
         })
         document.getElementById("cuerpotabla").innerHTML = estructura;
-        Usuarios.forEach((p)=>{
-            let elemento = document.getElementById("UPD"+p.id);
+        Usuarios.forEach((u)=>{
+            let elemento = document.getElementById("UPD"+u.id);
             elemento.addEventListener("click",()=>{
-                document.getElementById("UPDnombre").value = p.nombre;
-                document.getElementById("UPDapellido").value = p.apellido;
-                document.getElementById("UPDrut").value = p.rut;
-                document.getElementById("UPDcorreo").value = p.correo;
-                document.getElementById("UPDedad").value = p.edad;
-                document.getElementById("UPDfnacimiento").value = p.fechanacimiento;
-                document.getElementById("btnActualizar").value = p.id;
+                document.getElementById("UPDnombre").value = u.nombre;
+                document.getElementById("UPDapellido").value = u.apellido;
+                document.getElementById("UPDanio").value = u.anio;
+                document.getElementById("UPDconocer").value = u.conocer;
+                document.getElementById("UPDcorreo").value = u.correo;
+                document.getElementById("UPDcontraseña").value = u.contraseña;
+                document.getElementById("UPDccontraseña").value = u.ccontraseña;
+                document.getElementById("UPDgenero").value = u.genero;
+                document.getElementById("UPDcomentario").value = u.comentario;
+                document.getElementById("UPDnoticias").value = u.noticias;
+                document.getElementById("btnActualizar").value = u.id;
 
             });
-            let btnEliminar = document.getElementById("DEL"+p.id);
+            let btnEliminar = document.getElementById("DEL"+u.id);
             btnEliminar.addEventListener("click",()=>{
-                if(confirm("Estas seguro que deseas eliminar a: \n"+u.nombre+" "+p.apellido)){
-                    console.log("Eliminado sera entonces")
-                    EliminarP(p.id).then(()=>{
+                if(confirm("Estas seguro que deseas eliminar a: \n"+u.nombre+" "+u.apellido)){
+                    console.log("Eliminado será entonces")
+                    EliminarU(u.id).then(()=>{
                         alert("Ha sido eliminado")
                         cargarDatos();
                     }).catch((e)=>{
@@ -95,3 +99,50 @@ const cargarDatos = ()=>{
     })
 }
 
+
+const actualizar = ()=>{
+    let fNombre = document.getElementById("UPDnombre");
+    let fApellido = document.getElementById("UPDapellido");
+    let fAnio = document.getElementById("UPDanio");
+    let fConocer = document.getElementById("UPDconocer");
+    let fCorreo = document.getElementById("UPDcorreo");
+    let fContraseña = document.getElementById("UPDcontraseña");
+    let fCContraseña = document.getElementById("UPDccontraseña");
+    let fGenero = document.getElementById("UPDgenero");
+    let fComentario = document.getElementById("UPDcomentario");
+    let fNoticias = document.getElementById("UPDnoticias");
+    let vNombre = fNombre.value;
+    let vApellido = fApellido.value;
+    let vAnio = fAnio.value;
+    let vConocer =fConocer.value
+    let vCorreo = fCorreo.value;
+    let vContraseña = fContraseña.value;
+    let vCContraseña = fCContraseña.value;
+    let vGenero = document.querySelector("input[name='Genero']").value;
+    let vComentario = fComentario.value;
+    let vNoticias = fNoticias.checked;
+    
+    let objeto = {nombre:vNombre,apellido:vApellido,anio:vAnio,conocer:vConocer,correo:vCorreo,contraseña:vContraseña,ccontraseña:vCContraseña,genero:vGenero,comentario:vComentario,noticias:vNoticias}
+    let id = document.getElementById("btnActualizar").value
+
+
+    document.getElementById("btnActualizar").disabled = "true";
+
+    ActualizarU(objeto,id).then(()=>{
+        alert("Se actualiza con exito")
+        cargarDatos();
+        document.getElementById("btnActualizar").disabled = "";
+
+    }).catch((e)=>{
+        console.log(e)
+    }).finally(()=>{
+        document.getElementById("btnActualizar").disabled = "";
+    })
+
+
+
+
+
+
+
+}

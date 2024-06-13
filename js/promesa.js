@@ -5,7 +5,9 @@ export const RegistrarU = async(usuario)=>{
 }
 
 export const ObtenerU = async()=>{
+    //recuperar la base
     const ref = collection(db, "Usuarios");
+    //recuperamos una captura de la bd
     const qSnap = await getDocs(ref);
     let listado = []
     qSnap.forEach((doc)=>{
