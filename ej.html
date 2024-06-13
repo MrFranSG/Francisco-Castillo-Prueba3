@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/firebase.js"></script>
+    <script type="module" src="./js/java.js"></script>
+    <script src="js/script.js"></script>
+
+
 </head>
 <body>
     <header>
@@ -17,9 +22,9 @@
             <li><a href="#Redes">Redes sociales</a></li>
         </ul>
         <div id="Accesibilidad">
-            <button>Aumentar Fuente</button>
-            <button>Disminuir Fuente</button>
-            <button>Cambiar contraste</button>
+            <button onclick="AumentarFuente()">Aumentar Fuente</button>
+            <button onclick="DiminuirFuente()">Disminuir Fuente</button>
+            <button onclick="CambiarContraste()">Cambiar contraste</button>
         </div> 
     </header>
 
@@ -52,13 +57,13 @@ src="https://www.youtube.com/watch?v=EFrL6-OhN94">
 <form id="Formulario">
     <h1>Registro de usuario</h1>
     <label for="Nombre">Nombre</label><br>
-    <input type="text" id="Nombre" name="Nombre"><br><br>
+    <input type="text" id="Nombre" placeholder="Nombre"><br><br>
     <label for="Apellido">Apellido</label><br>
-    <input type="text" id="Apellido" name="Apellido"><br><br>
+    <input type="text" id="Apellido" placeholder="Apellido"><br><br>
     <label for="Anio">Año de nacimiento</label><br>
-    <input type="date" name="Anio"><br><br>
+    <input type="date" id="Anio" placeholder="Anio"><br><br>
     <label for="Conocer">Como nos conocio</label><br>
-    <select id="Conocer" name="Conocer">
+    <select id="Conocer" placeholder="Conocer">
         <option value="Amigo">Por un amigo</option>
         <option value="Anuncio">Por un anuncio</option>
         <option value="Juego">Por un juego</option>
@@ -66,19 +71,40 @@ src="https://www.youtube.com/watch?v=EFrL6-OhN94">
         <option value="Otro">Otra razon</option>
     </select><br>
     <label for="Correo">Correo</label><br>
-    <input type="email" id="Correo" name="Correo"><br><br>
+    <input type="email" id="Correo" placeholder="Correo"><br><br>
     <label for="Contraseña">Contraseña</label><br>
-    <input type="password" id="Contraseña" name="Contraseña"><br><br>
+    <input type="password" id="Contraseña" placeholder="Contraseña"><br><br>
     <label for="CContraseña">Confirmar Contraseña</label><br>
-    <input type="password" name="CContraseña" id="CContraseña"><br><br>
+    <input type="password" placeholder="CContraseña" id="CContraseña"><br><br>
     <label for="Genero">Genero</label><br>
-    <input type="checkbox" name="Genero"><br><br>
+    <input type="checkbox" id="Genero" placeholder="Genero"><br><br>
     <label for="Comentario">Comentario</label><br>
-    <input type="textarea" name="Comentario"><br><br>
+    <input type="textarea" id="Comentario" placeholder="Comentario"><br><br>
     <label for="Noticias">Noticias</label><br>
-    <input type="radio" name="Noticias"><br><br>
-    <input type="submit">
+    <input type="radio" id="Noticias" placeholder="Noticias"><br><br>
+    <button id="btnRegistrar">Registrar</button>
 </form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Año</th>
+            <th>Conocer</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            <th>CContraseña</th>
+            <th>Genero</th>
+            <th>Comerntario</th>
+            <th>Noticias</th>
+        </tr>
+    </thead>
+    <tbody id="cuerpotabla">
+        
+    </tbody>
+</table>
+
 <footer id="Redes">
     <h1>Redes sociales</h1>
 

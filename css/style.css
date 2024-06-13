@@ -1,6 +1,16 @@
 body{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
     background-color: lightskyblue;
+    color: black;
+    transition: all 0.3s;
 }
+
+.high-contrast{
+    background-color: black;
+    color: lightskyblue;
+}
+
 
 ul {
     list-style-type: none;
